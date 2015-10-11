@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt,oneside]{article}
+
+% to generate dvi file: $ latex file
+% to create ps file: $ dvips -z -Ppdf file
+% -z option is necessary only if hyperref package is used,
+% otherwise hyperlink would not be passed away
+% this will include Type 1 fonts
+% to create pdf file:
+%	first create ps
+%	$ ps2pdf -dPDFSETTINGS=/prepress -dEmbedAllFonts=true file
+% to html: latex2html -image_type png -no_reuse -html_version=4.0,unicode -index_in_navigation teste.tex
+
+% the last declared language is the default.
+% to change languages in document, use
+% \selectlanguage
+\usepackage[english,brazil]{babel}
+
+% input encoding: UTF-8
+\usepackage[utf8]{inputenc}
+
+% font encoding: T1 - don't know exactly why
+\usepackage[T1]{fontenc}
+
+% for rendering pdffonts better
+% use command pdffonts to see if all fonts are embedded in pdf file
+%\usepackage{tgtermes}	% tex gyre termes - serif font based on Nimbus
+%\usepackage{tgheros}	% tex gyre heros - sans serif font based on Nimbus
+%\usepackage{tgcursor}	% tex gyre cursor - typewriter font based on Nimbus
+
+% idents first paragraph on new sections
+\usepackage{indentfirst}
+
+% to put multiline comments
+% \begin{comment} \end{comment}
+\usepackage{verbatim}
+
+% for graphics (DOH)
+\usepackage{graphicx}
+
+% converts eps files to pdf,
+% now you can call directly pdflatex,
+% with the modifier "-escape-shell"
+\usepackage{epstopdf}
+
+% don't output any file, unless
+% \syntaxonly
+% line is commented
+\usepackage{syntonly}
+%\syntaxonly
+
+% nice things for latex2html
+%\usepackage{html}
+% this adds a custom link on navigation bar
+%\htmladdtonavigation{\htmladdnormallink{google}{http:www.google.com}}
+
+% for creating hyperlinks, both internal and external
+% should be the last added package
+%\usepackage{hyperref}
+
+\title{The title}
+\author{John Doe}
+
+\begin{document}
+	The foundations of the rigorous study of \emph{analysis}
+	were laid in the nineteenth century, notably by the
+	mathematicians Cauchy and Weierstrass. Central to the
+	study of this subject are the formal definitions of
+	\emph{limits} and \emph{continuity}.
+	
+	\sffamily
+	Let $D$ be a subset of $\bf R$ and let
+	$f \colon D \to \mathbf{R}$ be a real-valued function on
+	$D$. The function $f$ is said to be \emph{continuous} on
+	$D$ if, for all $\epsilon > 0$ and for all $x \in D$,
+	there exists some $\delta > 0$ (which may depend on $x$)
+	such that if $y \in D$ satisfies
+	\[ |y - x| < \delta \]
+	then
+	\[ |f(y) - f(x)| < \epsilon. \]
+	\begin{verbatim}
+		verbatim text    test.
+	\end{verbatim}
+	
+	One may readily verify that if $f$ and $g$ are continuous
+	functions on $D$ then the functions $f+g$, $f-g$ and
+	$f.g$ are continuous. If in addition $g$ is everywhere
+	non-zero then $f/g$ is continuous.
+
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[scale=.7]{motor.eps}
+		\caption{Digraph.}
+		\label{fig:digraph}
+	\end{figure}
+
+\end{document}
