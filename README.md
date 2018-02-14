@@ -3,6 +3,8 @@
 
 A simple example for using LaTeX.
 
+Official Public Repository: https://gitlab.com/jwaghetti/latex_example
+
 Copyright (C) 2015 Jean Waghetti.
 
 This work is free. You can redistribute it and/or modify it under the
